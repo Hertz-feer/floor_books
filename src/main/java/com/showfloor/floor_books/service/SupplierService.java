@@ -7,6 +7,12 @@ import java.util.List;
 public interface SupplierService {
 
     /**
+     * 根据ID查询
+     * @param id
+     * @return
+     */
+    Supplier selectById(Integer id);
+    /**
      * 根据名称模糊查询
      * @param name
      * @return
@@ -52,5 +58,5 @@ public interface SupplierService {
      * @param supplier
      * @return
      */
-    Integer deleteSupplier(Supplier supplier);
+    void deleteSupplier(Supplier supplier);
 }

@@ -40,12 +40,19 @@ public interface AccessoriesService {
      * @param accessories
      * @return
      */
-    void deleteAccessories(Accessories accessories);
+    void deleteAccessories(Integer id);
 
     /**
-     * 删除配件
+     * 修改配件
      * @param accessories
      * @return
      */
-    void updateAccessories(Accessories accessories);
+    Accessories updateAccessories(Accessories accessories);
+
+    /**
+     * 根据Id查询
+     * @param id
+     * @return
+     */
+    Accessories selectById(Integer id);
 }

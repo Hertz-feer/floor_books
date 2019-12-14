@@ -41,12 +41,12 @@ public interface BrandService {
      * @param brand
      * @return
      */
-    Integer deleteBrand(Brand brand);
+    void deleteBrand(Brand brand);
 
     /**
      * 修改品牌
      * @param brand
      * @return
      */
-    Integer updateBrand(Brand brand);
+    void updateBrand(Brand brand);
 }

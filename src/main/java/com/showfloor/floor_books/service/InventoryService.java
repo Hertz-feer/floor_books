@@ -7,11 +7,16 @@ import java.util.List;
 public interface InventoryService {
 
     /**
+     * 根据地板Id查询
+     * @return
+     */
+    Inventory selectById(Integer id);
+    /**
      * 根据地板名称查询
      * @param name
      * @return
      */
-    Inventory selectByName(String name);
+    List<Inventory> selectByName(String name);
 
     /**
      * 查询所有

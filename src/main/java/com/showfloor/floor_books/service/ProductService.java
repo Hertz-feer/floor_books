@@ -17,7 +17,7 @@ public interface ProductService {
      * @param brand
      * @return
      */
-    List<Product> selcetByBrand(String brand);
+    List<Product> selectByBrand(String brand);
 
     /**
      * 根据名称模糊查询
@@ -38,7 +38,7 @@ public interface ProductService {
      * @param product
      * @return
      */
-    Integer deleteProduct(Product product);
+    void deleteProduct(Product product);
 
     /**
      * 新增商品

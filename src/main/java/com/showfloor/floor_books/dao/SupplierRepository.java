@@ -2,7 +2,14 @@ package com.showfloor.floor_books.dao;
 
 import com.showfloor.floor_books.pojo.Supplier;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface SupplierRepository extends JpaRepository<Supplier,Integer>, JpaSpecificationExecutor<Supplier> {
+import java.util.List;
+
+public interface SupplierRepository extends JpaRepository<Supplier,Integer> {
+
+    List<Supplier> findByNameLike(String name);
+
+    List<Supplier> findByPhoneNumberLike(String phoneNumber);
+
+    List<Supplier> findByPhoneNumberAndPhoneNumber2Like(String phoneNumber2);
 }

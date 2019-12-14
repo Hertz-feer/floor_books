@@ -38,12 +38,12 @@ public class AccessoriesServiceImpl implements AccessoriesService {
     }
 
     @Override
-    public void deleteAccessories(Accessories accessories) {
-        accessoriesRepository.delete(accessories);
+    public void deleteAccessories(Integer id) {
+        accessoriesRepository.deleteById(id);
     }
 
     @Override
-    public void updateAccessories(Accessories accessories) {
+    public Accessories updateAccessories(Accessories accessories) {
         Accessories old = accessoriesRepository.findById(accessories.getId()).get();
         if(accessories.getName()==null || "".equals(accessories.getName())){
             accessories.setName(old.getName());
@@ -58,6 +58,12 @@ public class AccessoriesServiceImpl implements AccessoriesService {
             accessories.setPurchasePrice(old.getPurchasePrice());
         }
         accessories.setCreateTIme(old.getCreateTime());
-        accessoriesRepository.save(accessories);
+        return accessoriesRepository.save(accessories);
+
+    }
+
+    @Override
+    public Accessories selectById(Integer id) {
+        return accessoriesRepository.findById(id).get();
     }
 }
