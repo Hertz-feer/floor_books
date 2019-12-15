@@ -55,44 +55,27 @@
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 					<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
 					<!--需要区分是员工修改还是添加；-->
-					<form th:action="@{/customer}" method="post">
+					<form th:action="@{/acc}" method="post">
 						<!--
-							发生post请求来创建员工
+							发生post请求来创建附加
 						-->
 						<div class="form-group">
-							<label>姓名</label>
-							<input name="name" type="text" class="form-control" placeholder="姓名" >
-						</div>
-						<div class="form-group">
-							<label>电话</label>
-							<input name="phone" type="text" class="form-control" >
-						</div>
-						<div class="form-group">
-							<label>性别</label><br/>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sex" value="男" >
-								<label class="form-check-label">男</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sex" value="女" >
-								<label class="form-check-label">女</label>
-							</div>
+							<label>附件名称</label>
+							<input name="name" type="text" class="form-control" placeholder="附件名称" >
 						</div>
 						<div>
-							<label>地址</label><br/>
-						<select class="form-control" name="prov" id="prov" onchange="showCity()">
-							<option  th:value="${district.id}" th:each="district:${districts}" th:text="${district.address}">1</option>
-						</select>
-						<select class="form-control" name="city" id="city" onchange="showCountry()">请先选择省份或直辖市</select>
-						<select class="form-control" name="area" id="area" ></select>
+							<label>供应商</label><br/>
+							<select class="form-control" name="brand" id="brand" >
+								<option  th:value="${brand.name}" th:each="brand:${brands}" th:text="${brand.name}">1</option>
+							</select>
 						</div>
 						<div class="form-group">
-							<label>详细地址</label>
-							<input name="account" type="text" class="form-control" >
+							<label>进价</label>
+							<input name="purchasePrice" type="text" class="form-control" >
 						</div>
 						<div class="form-group">
-							<label>物流要求</label>
-							<input name="ask" type="text" class="form-control" >
+							<label>售价</label>
+							<input name="price" type="text" class="form-control" >
 						</div>
 						<button type="submit" class="btn btn-primary" th:text="添加">添加</button>
 					</form>

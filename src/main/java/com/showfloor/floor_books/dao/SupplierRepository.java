@@ -11,5 +11,5 @@ public interface SupplierRepository extends JpaRepository<Supplier,Integer> {
 
     List<Supplier> findByPhoneNumberLike(String phoneNumber);
 
-    List<Supplier> findByPhoneNumberAndPhoneNumber2Like(String phoneNumber2);
+    List<Supplier> findByPhoneNumbersLike(String phoneNumbers);
 }

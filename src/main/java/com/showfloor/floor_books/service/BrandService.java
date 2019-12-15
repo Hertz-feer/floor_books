@@ -38,15 +38,15 @@ public interface BrandService {
 
     /**
      * 删除
-     * @param brand
+     * @param id
      * @return
      */
-    void deleteBrand(Brand brand);
+    void deleteBrand(Integer id);
 
     /**
      * 修改品牌
      * @param brand
      * @return
      */
-    void updateBrand(Brand brand);
+    Brand updateBrand(Brand brand);
 }

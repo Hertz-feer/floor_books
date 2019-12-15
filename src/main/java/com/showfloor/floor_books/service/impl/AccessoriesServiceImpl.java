@@ -6,6 +6,7 @@ import com.showfloor.floor_books.service.AccessoriesService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,6 +34,7 @@ public class AccessoriesServiceImpl implements AccessoriesService {
 
     @Override
     public Accessories createAccessories(Accessories accessories) {
+        accessories.setCreateTIme(new Date());
         Accessories create = accessoriesRepository.save(accessories);
         return create;
     }

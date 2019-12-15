@@ -28,10 +28,10 @@ public interface SupplierService {
 
     /**
      * 根据电话2模糊查询
-     * @param phone2
+     * @param phones
      * @return
      */
-    List<Supplier> selectByPhone2(String phone2);
+    List<Supplier> selectByPhones(String phones);
 
     /**
      * 查询所有

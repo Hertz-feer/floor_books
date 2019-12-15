@@ -56,6 +56,11 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
+    public void deleteInventory(Integer id) {
+        inventoryRepository.deleteById(id);
+    }
+
+    @Override
     public Inventory selectById(Integer id) {
         return inventoryRepository.findById(id).get();
     }

@@ -19,6 +19,14 @@ spring:
       pool-prepared-statements: true
       filters: stat,wall,slf4j
       max-open-prepared-statements: 50
-      max-pool-prepared-statement-per-connection-size: 30
+      max-pool-prepared-statement-per-connection-size: 20
+      username: root
+      password: root
+      url: jdbc:mysql://localhost:3306/miaozhang?serverTimezone=UTC
+
   jpa:
     show-sql: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

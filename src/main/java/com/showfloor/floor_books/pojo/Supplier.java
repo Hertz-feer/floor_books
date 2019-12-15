@@ -17,19 +17,7 @@ public class Supplier {
   private String address;  //地址
   private Date createTime;  //创建时间
   private String phoneNumber;  //电话1
-  private String phoneNumber2;  //电话2
-
-  @Override
-  public String toString() {
-    return "Supplier{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", address='" + address + '\'' +
-            ", createTime=" + createTime +
-            ", phoneNumber='" + phoneNumber + '\'' +
-            ", phoneNumber2='" + phoneNumber2 + '\'' +
-            '}';
-  }
+  private String phoneNumbers;  //电话2
 
   public Integer getId() {
     return id;
@@ -71,11 +59,11 @@ public class Supplier {
     this.phoneNumber = phoneNumber;
   }
 
-  public String getPhoneNumber2() {
-    return phoneNumber2;
+  public String getPhoneNumbers() {
+    return phoneNumbers;
   }
 
-  public void setPhoneNumber2(String phoneNumber2) {
-    this.phoneNumber2 = phoneNumber2;
+  public void setPhoneNumbers(String phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
   }
 }

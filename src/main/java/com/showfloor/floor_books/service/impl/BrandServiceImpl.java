@@ -39,12 +39,12 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public void deleteBrand(Brand brand) {
-        brandRepository.delete(brand);
+    public void deleteBrand(Integer id) {
+        brandRepository.deleteById(id);
     }
 
     @Override
-    public void updateBrand(Brand brand) {
-        brandRepository.save(brand);
+    public Brand updateBrand(Brand brand) {
+        return  brandRepository.save(brand);
     }
 }

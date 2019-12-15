@@ -53,39 +53,28 @@
 				<div th:replace="commons/bar::#sidebar(activeUri='customers')"></div>
 
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-					<h2><a class="btn btn-sm btn-success" href="emp" th:href="@{/customer}">员工添加</a></h2>
 					<div class="table-responsive">
 						<table class="table table-striped table-sm">
 							<thead>
 								<tr>
 									<th>编号</th>
-									<th>姓名</th>
-									<th>电话</th>
-									<th>性别</th>
-									<th>订单次数</th>
-									<th>创建时间</th>
-									<th>总金额</th>
-									<th>地址</th>
-									<th>详细地址</th>
-									<th>详细</th>
-									<th>操作</th>
+									<th>地板名称</th>
+									<th>供应商</th>
+									<th>件</th>
+									<th>片</th>
+									<th>最后更新时间</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="customer:${customers}">
-									<td th:text="${customer.id}"></td>
-									<td>[[${customer.name}]]</td>
-									<td th:text="${customer.phone}"></td>
-									<td th:text="${customer.sex}==0?'女':'男'"></td>
-									<td th:text="${customer.frequency}"></td>
-									<td th:text="${#dates.format(customer.creat_time, 'yyyy-MM-dd HH:mm')}"></td>
-									<td th:text="${customer.volume}"></td>
-									<td th:text="${customer.district.address}"></td>
-									<td th:text="${customer.account}"></td>
-									<td th:text="${customer.ask}"></td>
+								<tr th:each="inventory:${invs}">
+									<td th:text="${inventory.id}"></td>
+									<td>[[${inventory.name}]]</td>
+									<td th:text="${inventory.brand}"></td>
+									<td th:text="${inventory.piece}"></td>
+									<td th:text="${inventory.slice}"></td>
+									<td th:text="${#dates.format(inventory.lastUpdate, 'yyyy-MM-dd HH:mm')}"></td>
 									<td>
-										<a class="btn btn-sm btn-primary" th:href="@{/customer/}+${customer.id}">编辑</a>
-										<a th:attr="del_uri=@{/customer/}+${customer.id}" class="btn btn-sm btn-danger deleteBtn">删除</a>
+										<a class="btn btn-sm btn-primary" th:href="@{/inv/}+${inventory.id}">编辑</a>
 									</td>
 								</tr>
 							</tbody>

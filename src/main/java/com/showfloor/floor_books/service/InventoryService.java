@@ -35,12 +35,18 @@ public interface InventoryService {
      * 修改库存表
      * @return
      */
-    Inventory updateInventory(Inventory inventoryOfFloor);
+    Inventory updateInventory(Inventory inventory);
 
     /**
      * 增库库存
-     * @param inventoryOfFloor
+     * @param inventory
      * @return
      */
-    Inventory InsertInventory(Inventory inventoryOfFloor);
+    Inventory InsertInventory(Inventory inventory);
+
+    /**
+     * 删除库存
+     * @param id
+     */
+    void deleteInventory(Integer id);
 }

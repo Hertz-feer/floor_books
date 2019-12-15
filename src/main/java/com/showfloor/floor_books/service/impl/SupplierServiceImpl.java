@@ -23,13 +23,13 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public List<Supplier> selectByPhone(String phone) {
         String newPhone = "%"+phone+"%";
-        return  supplierRepository.findByPhoneNumberAndPhoneNumber2Like(newPhone);
+        return  supplierRepository.findByPhoneNumberLike(newPhone);
     }
 
     @Override
-    public List<Supplier> selectByPhone2(String phone2) {
-        String newPhone2 = "%"+phone2+"%";
-        return  supplierRepository.findByPhoneNumberAndPhoneNumber2Like(newPhone2);
+    public List<Supplier> selectByPhones(String phones) {
+        String newPhones = "%"+phones+"%";
+        return  supplierRepository.findByPhoneNumbersLike(newPhones);
     }
 
     @Override
@@ -49,8 +49,8 @@ public class SupplierServiceImpl implements SupplierService {
         if(supplier.getPhoneNumber()==null || "".equals(supplier.getPhoneNumber())){
             supplier.setPhoneNumber(old.getPhoneNumber());
         }
-        if(supplier.getPhoneNumber2()==null || "".equals(supplier.getPhoneNumber2())){
-            supplier.setPhoneNumber2(old.getPhoneNumber2());
+        if(supplier.getPhoneNumbers()==null || "".equals(supplier.getPhoneNumbers())){
+            supplier.setPhoneNumbers(old.getPhoneNumbers());
         }
         supplier.setCreateTime(old.getCreateTime());
         return supplierRepository.save(supplier);

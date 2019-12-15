@@ -25,7 +25,7 @@ public class AccessoriesController {
     @GetMapping("/accs")  //附件列表
     public String showAccs(Model model){
         List<Accessories> list = accessoriesServiceImpl.getAll();
-        model.addAttribute("list",list);
+        model.addAttribute("accs",list);
         return "/acc/list";
     }
 
